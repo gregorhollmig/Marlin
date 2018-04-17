@@ -1034,13 +1034,13 @@
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #define X_CURRENT          800  // rms current in mA. Multiply by 1.41 for peak current.
-  #define X_MICROSTEPS        256  // 0..256
+  #define X_MICROSTEPS        32// 0..256
 
   #define Y_CURRENT          800
-  #define Y_MICROSTEPS        256
+  #define Y_MICROSTEPS        32
 
   #define Z_CURRENT          800
-  #define Z_MICROSTEPS        256
+  #define Z_MICROSTEPS        32
 
   #define X2_CURRENT         800
   #define X2_MICROSTEPS       16
@@ -1083,7 +1083,7 @@
    * M912 - Clear stepper driver overtemperature pre-warn condition flag.
    * M122 S0/1 - Report driver parameters (Requires TMC_DEBUG)
    */
-  //#define MONITOR_DRIVER_STATUS
+#define MONITOR_DRIVER_STATUS
 
   #if ENABLED(MONITOR_DRIVER_STATUS)
     #define CURRENT_STEP_DOWN     50  // [mA]
@@ -1134,7 +1134,7 @@
    * Enable M122 debugging command for TMC stepper drivers.
    * M122 S0/1 will enable continous reporting.
    */
-  //#define TMC_DEBUG
+  #define TMC_DEBUG
 
   /**
    * You can set your own advanced settings by filling in predefined functions.
