@@ -372,9 +372,9 @@
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
 // AUtotune Dolly E3Dv6
-#define DEFAULT_Kp 30.62
-#define DEFAULT_Ki 3.46
-#define DEFAULT_Kd 67.73
+#define DEFAULT_Kp 54.69
+#define DEFAULT_Ki 9.97
+#define DEFAULT_Kd 75.05
 
 // Ultimaker
 //#define DEFAULT_Kp 22.2
@@ -786,7 +786,7 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR false
-#define INVERT_Y_DIR false
+#define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
 
 // Enable this option for Toshiba stepper drivers
@@ -1711,7 +1711,7 @@
 // Use software PWM to drive the fan, as for the heaters. This uses a very low frequency
 // which is not as annoying as with the hardware PWM. On the other hand, if this frequency
 // is too low, you should also increment SOFT_PWM_SCALE.
-//#define FAN_SOFT_PWM
+#define FAN_SOFT_PWM
 
 // Incrementing this by 1 will double the software PWM frequency,
 // affecting heaters, and the fan if FAN_SOFT_PWM is enabled.
