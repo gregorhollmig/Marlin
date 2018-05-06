@@ -1066,10 +1066,10 @@
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
-  #define X_CURRENT          700  // rms current in mA. Multiply by 1.41 for peak current.
+  #define X_CURRENT          636  // rms current in mA. Multiply by 1.41 for peak current.
   #define X_MICROSTEPS        32  // 0..256
 
-  #define Y_CURRENT          700
+  #define Y_CURRENT          636
   #define Y_MICROSTEPS        32
 
   #define Z_CURRENT          800
@@ -1209,7 +1209,18 @@
    *   stepperY.interpolate(0); \
    * }
    */
-  #define  TMC_ADV() {  }
+  #define  TMC_ADV() { \
+   stepperX.off_time(2);\
+   stepperY.off_time(2);\
+   stepperX.hysterisis_start(0);\
+   stepperY.hysterisis_start(0);\
+   stepperX.run_current(31);\
+   stepperY.run_current(31);\
+   stepperX.hold_current(12);\
+   stepperY.hold_current(12);\
+   stepperX.power_down_delay(4); \
+   stepperY.power_down_delay(4); \
+  }
 
 #endif // TMC2130 || TMC2208
 
